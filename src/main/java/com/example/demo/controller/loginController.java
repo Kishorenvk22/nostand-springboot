@@ -37,7 +37,6 @@ public class loginController {
     public boolean login(@RequestBody loginDto logindto) {
 		
 		
-		System.out.println("dcjdnncndcn");
         return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
     }
 	

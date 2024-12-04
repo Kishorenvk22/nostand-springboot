@@ -30,6 +30,7 @@ public class loginController {
 	
 	@GetMapping("/userinfo")
 	public List<loginDto> getAllUsers(){
+	//hdfuih
 		return loginservice.findAllUsers();
 	}
 	 

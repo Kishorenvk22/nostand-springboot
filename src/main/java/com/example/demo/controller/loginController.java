@@ -36,7 +36,7 @@ public class loginController {
 	@PostMapping("/login")
     public boolean login(@RequestBody loginDto logindto) {
 		
-		System.out.println("advgdfbdb");
+		
 		System.out.println("dcjdnncndcn");
         return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
     }

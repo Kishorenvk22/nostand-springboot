@@ -30,7 +30,6 @@ public class loginController {
 	
 	@GetMapping("/userinfo")
 	public List<loginDto> getAllUsers(){
-	//hdfuih
 		return loginservice.findAllUsers();
 	}
 	 
@@ -38,6 +37,10 @@ public class loginController {
     public boolean login(@RequestBody loginDto logindto) {
         return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
     }
+	@GetMapping("/")
+	public String getWelcomeMsg(){
+		return "Successfully inside heroku";
+	}
 	
 	
 }

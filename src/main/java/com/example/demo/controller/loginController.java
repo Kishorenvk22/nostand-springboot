@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.dto.loginDto;
 import com.example.demo.entity.loginEntity;
 import com.example.demo.service.loginService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET,RequestMethod.PATCH,RequestMethod.POST})
@@ -39,6 +41,11 @@ public class loginController {
 		System.out.println("cvdfbv ");
         return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
     }
+	@GetMapping("/test")
+	public String getMethodName(){
+		return "Successfull";
+	}
+	
 	
 	
 }

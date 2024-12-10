@@ -10,7 +10,7 @@ public class consConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/api/**")
-		.allowedOrigins("http://localhost:4200")
+		.allowedOrigins("http://localhost:4200","https://nostand-angular-git-bankai-kishorenvk22s-projects.vercel.app")
 		.allowedHeaders("*")
 		.allowedMethods("GET","POST","PUT","PATCH","DELETE");
 		

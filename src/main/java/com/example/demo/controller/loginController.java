@@ -37,7 +37,7 @@ public class loginController {
     public boolean login(@RequestBody loginDto logindto) {
         return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
     }
-	@GetMapping("/")
+	@GetMapping("/test")
 	public String getWelcomeMsg(){
 		return "Successfully inside heroku";
 	}

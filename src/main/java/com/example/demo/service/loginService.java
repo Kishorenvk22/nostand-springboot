@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,16 @@ public class loginService {
         }
         return false;  // Invalid login
     }
+	
+	public loginEntity authenticateUser(String username,String password){
+		
+		loginEntity loginUser= loginjpa.findByUsername(username);
+		if(loginUser!=null && loginUser.getPassword().equals(password))
+			return loginUser;
+		
+		return null;
+		
+	}
+	
 
 }

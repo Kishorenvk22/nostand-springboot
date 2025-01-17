@@ -1,4 +1,4 @@
-FROM maven:3.9.9-amazoncorretto-8-al2023 AS build
+FROM maven:3.8.4-openjdk-8 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 

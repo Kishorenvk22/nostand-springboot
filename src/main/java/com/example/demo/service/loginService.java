@@ -19,7 +19,7 @@ public class loginService {
 	private loginJpa loginjpa;
 	
 	public List<loginDto> findAllUsers() {
-        List<loginEntity> login = loginjpa.findAll();  
+        List<loginEntity> login = loginjpa.findAll();
         return login.stream()
                 .map(l -> new loginDto (l.getId(), l.getUsername(), l.getPassword()))  
                 .collect(Collectors.toList());

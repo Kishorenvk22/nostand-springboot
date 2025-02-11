@@ -9,8 +9,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class loginUsername {
+public class ItemDTO {
 
-	private String username;
+	private String id;
+	private String name;
+	private double price;
+	private String imageUrl;
+	private boolean available;
+	private String categoryId;
+	private String restaurantId;
 
 }

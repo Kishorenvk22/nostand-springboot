@@ -10,26 +10,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="login")
+@Table(name = "login")
 @Getter
 @Setter
 public class loginEntity {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	@Column(name="loginid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "loginid")
 	private long id;
-	
-	@Column(name="username")
+
+	@Column(name = "username")
 	private String username;
-	
-	@Column(name="password")
+
+	@Column(name = "password")
 	private String password;
-	
-	
-	
 
 }
-
-
-

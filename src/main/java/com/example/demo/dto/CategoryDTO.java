@@ -9,8 +9,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class loginUsername {
+public class CategoryDTO {
 
-	private String username;
+	private String id;
+
+	private String category_name;
+
+	private String restaurant_id;
 
 }

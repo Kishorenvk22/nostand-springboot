@@ -19,45 +19,43 @@ import com.example.demo.entity.loginEntity;
 import com.example.demo.service.loginService;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @RestController
-@CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET,RequestMethod.PATCH,RequestMethod.POST})
+@CrossOrigin(origins = "http://localhost:4200", methods = { RequestMethod.GET, RequestMethod.PATCH,
+		RequestMethod.POST })
 @RequestMapping("/api")
 public class loginController {
 
 	private loginService loginservice;
-	
+
 	@Autowired
-	public  loginController(loginService loginService) {
-		this.loginservice=loginService;
+	public loginController(loginService loginService) {
+		this.loginservice = loginService;
 	}
-	
+
 	@GetMapping("/userinfo")
-	public List<loginDto> getAllUsers(){
+	public List<loginDto> getAllUsers() {
 		return loginservice.findAllUsers();
 	}
-	
+
 	@PostMapping("/user")
 	public ResponseEntity<?> findUserName(@RequestBody loginDto logindto) {
-		loginEntity loginentity=loginservice.authenticateUser(logindto.getUsername(), logindto.getPassword());
-		if(loginentity!=null) {
+		loginEntity loginentity = loginservice.authenticateUser(logindto.getUsername(), logindto.getPassword());
+		if (loginentity != null) {
 			return ResponseEntity.ok(new loginUsername(loginentity.getUsername()));
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
 	}
-	 
+
 	@PostMapping("/login")
-    public boolean login(@RequestBody loginDto logindto) {
-		
+	public boolean login(@RequestBody loginDto logindto) {
+
 		System.out.println("cvdfbv ");
-        return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
-    }
+		return loginservice.authenticate(logindto.getUsername(), logindto.getPassword());
+	}
+
 	@GetMapping("/test")
-	public String getMethodName(){
+	public String getMethodName() {
 		return "Successfull";
 	}
-	
-	
-	
+
 }
- 
